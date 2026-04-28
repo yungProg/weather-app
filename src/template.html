@@ -1,11 +1,195 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="nav">
+        <button class="current-feel">Sunny</button>
+        <ul class="nav-links">
+          <li class="nav-link">
+            <button type="button" class="nav-btn">Weather</button>
+          </li>
+          <li class="nav-link">
+            <button type="button" class="nav-btn">Cities</button>
+          </li>
+          <li class="nav-link">
+            <button type="button" class="nav-btn">Settings</button>
+          </li>
+        </ul>
+      </nav>
+      <main class="main"></main>
+      <aside class="aside"></aside>
+    </div>
+    <div class="hiddens" style="display: none">
+      <template id="homepage-main-temp">
+        <div class="search-wrapper">
+          <form action="" method="get">
+            <input
+              type="search"
+              name="search"
+              id="search"
+              class="search-field"
+              placeholder="Search for cities"
+            />
+            <button type="submit" class="submit-btn">Search</button>
+          </form>
+        </div>
+        <div class="summary">
+          <div class="intro">
+            <div class="heading-wrapper">
+              <h2 class="city"></h2>
+              <p class="description"></p>
+            </div>
+            <p class="temperature"></p>
+          </div>
+          <div class="weather-img"></div>
+        </div>
+        <div class="today-forecasts-wrapper">
+          <h3>TODAY'S FORECASTS</h3>
+          <div class="today-forecasts">
+            <div class="forecast">
+              <p class="time">6:00 AM</p>
+              <div class="weather-img">Cloudy</div>
+              <p class="temperature">25 &deg;C</p>
+            </div>
+            <div class="forecast">
+              <p class="time">6:00 AM</p>
+              <div class="weather-img">Cloudy</div>
+              <p class="temperature">25 &deg;C</p>
+            </div>
+            <div class="forecast">
+              <p class="time">6:00 AM</p>
+              <div class="weather-img">Cloudy</div>
+              <p class="temperature">25 &deg;C</p>
+            </div>
+            <div class="forecast">
+              <p class="time">6:00 AM</p>
+              <div class="weather-img">Cloudy</div>
+              <p class="temperature">25 &deg;C</p>
+            </div>
+            <div class="forecast">
+              <p class="time">6:00 AM</p>
+              <div class="weather-img">Cloudy</div>
+              <p class="temperature">25 &deg;C</p>
+            </div>
+            <div class="forecast">
+              <p class="time">6:00 AM</p>
+              <div class="weather-img">Cloudy</div>
+              <p class="temperature">25 &deg;C</p>
+            </div>
+          </div>
+        </div>
+        <div class="air-condition-wrapper">
+          <div class="ac-wrapper-header">
+            <h3>AIR CONDITIONS</h3>
+            <button class="see-more">See more</button>
+          </div>
+          <div class="ac-info">
+            <div class="ac-card">
+              <div class="ac-name-wrapper">
+                <span class="weather-icon">Therm</span><span>Real feel</span>
+                <p class="real-feel">30 &deg;C</p>
+              </div>
+            </div>
+            <div class="ac-card">
+              <div class="ac-name-wrapper">
+                <span class="weather-icon">air</span><span>Wind</span>
+                <p class="real-feel">0.2 km/h</p>
+              </div>
+            </div>
+            <div class="ac-card">
+              <div class="ac-name-wrapper">
+                <span class="weather-icon">drop</span
+                ><span>Chance of rain</span>
+                <p class="real-feel">0%</p>
+              </div>
+            </div>
+            <div class="ac-card">
+              <div class="ac-name-wrapper">
+                <span class="weather-icon">sun</span><span>UV Index</span>
+                <p class="real-feel">3</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+      <template id="homepage-aside-template">
+        <h3>7-DAY FORECAST</h3>
+        <div class="day-forecast-wrapper">
+          <p class="day">Mon</p>
+          <div class="forecast-wrapper">
+            <div class="forecast-icon">Sun</div>
+            <p class="forecast">Sunny</p>
+          </div>
+          <div class="minmax">
+            <span class="max">36</span> / <span class="min">22</span>
+          </div>
+        </div>
+        <div class="day-forecast-wrapper">
+          <p class="day">Mon</p>
+          <div class="forecast-wrapper">
+            <div class="forecast-icon">Sun</div>
+            <p class="forecast">Sunny</p>
+          </div>
+          <div class="minmax">
+            <span class="max">36</span> / <span class="min">22</span>
+          </div>
+        </div>
+        <div class="day-forecast-wrapper">
+          <p class="day">Mon</p>
+          <div class="forecast-wrapper">
+            <div class="forecast-icon">Sun</div>
+            <p class="forecast">Sunny</p>
+          </div>
+          <div class="minmax">
+            <span class="max">36</span> / <span class="min">22</span>
+          </div>
+        </div>
+        <div class="day-forecast-wrapper">
+          <p class="day">Mon</p>
+          <div class="forecast-wrapper">
+            <div class="forecast-icon">Sun</div>
+            <p class="forecast">Sunny</p>
+          </div>
+          <div class="minmax">
+            <span class="max">36</span> / <span class="min">22</span>
+          </div>
+        </div>
+        <div class="day-forecast-wrapper">
+          <p class="day">Mon</p>
+          <div class="forecast-wrapper">
+            <div class="forecast-icon">Sun</div>
+            <p class="forecast">Sunny</p>
+          </div>
+          <div class="minmax">
+            <span class="max">36</span> / <span class="min">22</span>
+          </div>
+        </div>
+        <div class="day-forecast-wrapper">
+          <p class="day">Mon</p>
+          <div class="forecast-wrapper">
+            <div class="forecast-icon">Sun</div>
+            <p class="forecast">Sunny</p>
+          </div>
+          <div class="minmax">
+            <span class="max">36</span> / <span class="min">22</span>
+          </div>
+        </div>
+        <div class="day-forecast-wrapper">
+          <p class="day">Mon</p>
+          <div class="forecast-wrapper">
+            <div class="forecast-icon">Sun</div>
+            <p class="forecast">Sunny</p>
+          </div>
+          <div class="minmax">
+            <span class="max">36</span> / <span class="min">22</span>
+          </div>
+        </div>
+      </template>
+    </div>
+  </body>
 </html>
