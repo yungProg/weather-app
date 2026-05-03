@@ -6,14 +6,10 @@ import homepage from "./homepage.js";
 //     .then(resolve => resolve.json())
 //     .then(resolve => console.log(resolve))
 // }
-
-async function requestWeatherData(location) {}
-
-async function getRelevantData(location) {
-  const dataObj = await requestWeatherData(location);
-  console.log(dataObj);
-}
-homepage().build();
-homepage().homepageUpdater();
-// getRelevantData("kumasi")
-// requestWeatherData("kumasi")
+const searchForm = document.querySelector("form");
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const city = document.querySelector(".search-field").value;
+  homepage().homepageUpdater(city);
+  homepage().build();
+});
